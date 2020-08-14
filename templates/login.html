@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block body %}
+
+<form action="" method="post">
+    <div class="form-group">
+        <input type="text" id="usr" name="username" class="form-control" placeholder="username" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Login </button>
+</form>
+<script>
+
+    // Store the users to localstorage
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('button').onclick = () => {
+            let currentuser = document.querySelector("#usr").value;
+            localStorage.setItem('usr', currentuser);
+        }
+    });
+
+</script>
+
+<h5>Users logged in, select your name to chat</h5>
+<ul>
+    {% for name in names %}
+    <li>
+        <a href="{{ url_for('createchannel', name_in_channel=name)}}">
+            {{name}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
