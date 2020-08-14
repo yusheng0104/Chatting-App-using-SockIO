@@ -1,6 +1,5 @@
-# Project 2
+# Chatting APP using Python and SockIO
 
-Web Programming with Python and JavaScript
 
 In this package, the files included are listed as following:
 
